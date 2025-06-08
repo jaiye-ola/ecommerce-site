@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
-import Container from "./Container"
-import Carousel from "./Carousel"
+import Container from "./Container";
+import Carousel from "./Carousel";
 import { useParams } from "react-router";
 import { ProductContext } from "../context/ProductContext";
 
+//
 function ProductDetails() {
   const { product, addToCart } = useContext(ProductContext);
   const showItem = useParams();
-  console.log(showItem)
+  console.log(showItem);
 
   const productItem = product.find(
     (items) => parseInt(items.id) === parseInt(showItem.id)
@@ -39,7 +40,7 @@ function ProductDetails() {
               <p>{productItem?.description}</p>
               <div className="mb-3">
                 <button
-                onClick={() => addToCart(productItem?.id, 1,  productItem)}
+                  onClick={() => addToCart(productItem?.id, 1, productItem)}
                   type="button"
                   className="bg-[#0B4F6C] capitalize font-semibold hover:bg-white duration-500 transition-all hover:text-[#0B4F6C] hover:border hover:border-[#0B4F6C] text-white p-3 w-full md:w-[30%]"
                 >
