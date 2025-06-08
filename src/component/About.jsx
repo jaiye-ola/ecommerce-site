@@ -4,7 +4,6 @@ import { FaCalendarAlt } from "react-icons/fa";
 import Container from "./Container";
 
 function About() {
-  // now updated
   return (
     <Container>
       <div className="flex flex-wrap justify-around items-center gap-3 mt-12 mb-12 mmyy">

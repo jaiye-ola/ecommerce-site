@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router";
-import { ToastContainer } from 'react-toastify';
-import Header from "./component/Header"
+import { ToastContainer } from "react-toastify";
+import Header from "./component/Header";
 import Carousel from "./component/Carousel";
 import About from "./component/About";
 import { ProductProvider } from "./context/ProductContext";
@@ -13,13 +13,15 @@ import Product from "./component/Product";
 import ProductDetails from "./component/ProductDetails";
 import Cart from "./component/Cart";
 import Checkout from "./component/Checkout";
+import LoginPage from "./component/LoginPage";
+import Register from "./component/Register";
 
 function App() {
   return (
     <ProductProvider>
       <Router>
         <Header />
-         <ToastContainer position="top-right" autoClose={5000} /> 
+        <ToastContainer position="top-right" autoClose={5000} />
         <Routes>
           <Route
             path="/"
@@ -48,18 +50,11 @@ function App() {
               </>
             }
           />
-          <Route
-            path="/details/:id"
-            element={<ProductDetails /> }
-          />
-          <Route
-            path="/cart"
-            element={<Cart /> }
-          />
-          <Route
-            path="/checkout"
-            element={<Checkout /> }
-          />
+          <Route path="/details/:id" element={<ProductDetails />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </Router>
     </ProductProvider>
